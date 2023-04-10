@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="hibernate.example.onetomany.mapping.Question" table="Questions">
+        <id name="id" column="ID">
+            <generator class="increment"></generator>
+        </id>
+        <property name="qName" column="QUESTION_NAME"></property>
+
+        <list name="answerList" cascade="all">
+            <key column="qid"></key>
+            <index column="type"></index>
+            <one-to-many class="hibernate.example.onetomany.mapping.Answer"></one-to-many>
+        </list>
+
+    </class>
+
+    <class name="hibernate.example.onetomany.mapping.Answer" table="Answers">
+        <id name="id" column="ID">
+            <generator class="increment"></generator>
+        </id>
+
+        <property name="answerName" column="ANSWER_NAME"></property>
+
+        <property name="postedBy" column="POSTED_BY"></property>
+    </class>
+</hibernate-mapping>

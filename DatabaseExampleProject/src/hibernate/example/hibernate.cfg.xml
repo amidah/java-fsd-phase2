@@ -12,6 +12,10 @@
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="show_sql">true</property>
 <!--        <mapping resource="hibernate/example/employee.hbm.xml"></mapping>-->
-        <mapping class="hibernate.example.Employee"></mapping>
+<!--        <mapping class="hibernate.example.Employee"></mapping>-->
+<!--        <mapping resource="hibernate/example/collection/mapping/question.hbm.xml"></mapping>-->
+<!--        <mapping resource="hibernate/example/onetomany/mapping/onetomany.hbm.xml"></mapping>-->
+        <mapping class="hibernate.example.onetomany.mapping.Question"></mapping>
+        <mapping class="hibernate.example.onetomany.mapping.Answer"></mapping>
     </session-factory>
 </hibernate-configuration>
